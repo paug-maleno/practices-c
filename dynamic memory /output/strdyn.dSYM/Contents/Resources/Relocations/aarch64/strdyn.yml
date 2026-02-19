@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/pau/practices-c/dynamic memory /output/strdyn'
+relocations:     []
+...
