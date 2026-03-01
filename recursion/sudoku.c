@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 typedef struct{
-    int s[9][9]
+    int s[9][9];
 } sudoku;
 
 int is_valid (sudoku*s, int row, int col, int num){
@@ -34,4 +34,32 @@ int sudoku_solver(sudoku*s, int x, int y){
         }
     }
     return 0;  
+}
+
+int main() {
+    sudoku s;
+    for(int i=0; i<9; i++){
+        for(int j=0;j<9; j++){
+            scanf("%d", &s.s[i][j]);
+        }
+    }
+    for(int i=0; i<9; i++){
+        for(int j=0; j<9; j++){
+            printf("%d ", s.s[i][j]);
+        }
+        printf("\n");
+    }
+    if(sudoku_solver(&s, 0, 0)){
+        for(int i=0; i<9; i++){
+            for(int j=0; j<9; j++){
+                printf("%d ", s.s[i][j]);
+            }
+            printf("\n");
+        }
+    } else {
+        printf("no solution\n ");
+    }
+
+    return 0;
+
 }
